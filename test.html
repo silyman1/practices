@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"> </head>
-<body>
+<body onload="checkCookies()">
 <h1>我的 Web 页面</h1>
 <p id="demo">一个段落</p>
 <script>
-window.alert("sb");
+//window.alert("sb");
 document.write(Date());
-document.write("666");
+
+document.write(location.port);
 </script>
-<button type="button" onclick="myFunction()">尝试一下</button>
+<button type="button" onclick="opennew()">尝试一下</button>
 <script src="aaa.js"></script>
 看书：<input type="checkbox" name="checkbox" value=1><br>
 写字：<input type="checkbox" name="checkbox"value=2><br>
@@ -20,5 +21,30 @@ document.write("666");
 <button onclick="allcheck()">全选/取消</button>
 <a href="#pos">点我定位到指定位置!</a>
 <p id="pos">尾部定位点</p>
+<a href="www.baidu.com">点</a>
+<p id ="hero">按下就会有改变</p>
+<p id ="tt">shijian</p>
+<script>
+	var time =setInterval(function(){showtime()},1000);
+	function showtime(){
+	var d=new Date();
+	var t=d.toLocaleTimeString();
+	document.getElementById('tt').innerHTML =t
+}
+function checkCookies(){
+	if (navigator.cookieEnabled==true){
+		alert("Cookies 可用");
+	}
+	else{
+		alert("Cookies 不可用");
+	}
+}
+document.getElementById("hero").onmouseover=function(){changePlus()};
+function changePlus() {
+	document.getElementById("hero").innerHTML= '66666666';
+	}
+</script>
+
+
 </body>
 </html>
